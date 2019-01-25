@@ -18,13 +18,11 @@ See:
 def gen_paren(n):
     def _gen_paren(parens, opened, closed):
         if opened == 0:
-            print(parens)
-            print(parens + (')' * closed))
             return [parens + (')' * closed)]
         elif opened == closed:
-            return _gen_paren(parens + ('('), opened - 1, closed)
+            return _gen_paren(parens + '(', opened - 1, closed)
         elif closed > opened:
-            return _gen_paren(parens + ('('), opened - 1, closed) + _gen_paren(parens + ')', opened, closed - 1)
+            return _gen_paren(parens + '(', opened - 1, closed) + _gen_paren(parens + ')', opened, closed - 1)
     if n == 0:
         return []
     else:
