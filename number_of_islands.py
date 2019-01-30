@@ -15,23 +15,19 @@ def number_of_islands(grid):
     # all the connected land cells as
     # 'v' for visited.
     def _helper(r, c):
-        if grid[r][c] == 0 :
-            return
-        else:
-            print(r, c)
-            grid[r][c] = 'v'
-            if r-1 >= 0 and grid[r-1][c] == 1:
-                grid[r-1][c] = 'v'
-                _helper(r-1, c)
-            if c+1 < num_cols and grid[r][c+1] == 1:
-                grid[r][c+1] = 'v'
-                _helper(r, c+1)
-            if r+1 < num_rows and grid[r+1][c] == 1:
-                grid[r+1][c] = 'v'
-                _helper(r+1, c)
-            if c-1 >= 0 and grid[r][c-1] == 1:
-                grid[r][c-1] = 'v'
-                _helper(r, c-1)
+        grid[r][c] = 'v'
+        if r-1 >= 0 and grid[r-1][c] == 1:
+            grid[r-1][c] = 'v'
+            _helper(r-1, c)
+        if c+1 < num_cols and grid[r][c+1] == 1:
+            grid[r][c+1] = 'v'
+            _helper(r, c+1)
+        if r+1 < num_rows and grid[r+1][c] == 1:
+            grid[r+1][c] = 'v'
+            _helper(r+1, c)
+        if c-1 >= 0 and grid[r][c-1] == 1:
+            grid[r][c-1] = 'v'
+            _helper(r, c-1)
     for r in range(num_rows):
         for c in range(num_cols):
             # Showing both cases for readability,
