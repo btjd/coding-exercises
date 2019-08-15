@@ -6,7 +6,6 @@ Explanation of Algorithm
 https://www.youtube.com/watch?v=-3Lt-EwR_Hw
 """
 
-
 def fast_exponent(x, n):
     def fast_pow(x, n):
         if n == 0:
@@ -23,7 +22,6 @@ def fast_exponent(x, n):
         n = -n
     return fast_pow(x, n)
 
-# print fast_exponent(2, 10)
 def test_fast_exponent():
     assert fast_exponent(2.00000, 10) == 1024
     assert fast_exponent(2.00000, -2) == 0.25
